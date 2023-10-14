@@ -19,8 +19,8 @@ def load_data(file_path):
     """
     try:
         return pd.read_csv(file_path)
-    except Exception as e:
-        logging.error("Erro no carregamento de dados: %s", str(e))
+    except Exception as exc:
+        logging.error("Erro no carregamento de dados: %s", str(exc))
         return None
 
 def clean_title(title):
@@ -36,8 +36,8 @@ def preprocess_data(movies_data):
     try:
         movies_data["clean_title"] = movies_data["title"].apply(clean_title)
         return movies_data
-    except Exception as e:
-        logging.error("Erro no pré-processamento de dados: %s", str(e))
+    except Exception as exc:
+        logging.error("Erro no pré-processamento de dados: %s", str(exc))
         return None
 
 
@@ -50,8 +50,8 @@ def calculate_tfidf(movies_data):
         tfidf_data = local_vectorizer .fit_transform(
             movies_data["clean_title"])
         return tfidf_data, local_vectorizer
-    except Exception as e:
-        logging.error("Erro no cálculo do TF-IDF: %s", str(e))
+    except Exception as exc:
+        logging.error("Erro no cálculo do TF-IDF: %s", str(exc))
         return None, None
 
 
@@ -66,8 +66,8 @@ def search(title, vectorizer, tfidf, movies):
         indices = np.argpartition(similarity, -5)[-5:]
         results = movies.iloc[indices].iloc[::-1]
         return results
-    except Exception as e:
-        logging.error("Erro na busca de filmes similares: %s", str(e))
+    except Exception as exc:
+        logging.error("Erro na busca de filmes similares: %s", str(exc))
         return None
 
 
@@ -81,8 +81,8 @@ def create_movie_input_widget(default_value='Toy Story'):
             description='Movie Title:',
             disabled=False
         )
-    except Exception as e:
-        logging.error("Erro ao criar widget de entrada de filme: %s", str(e))
+    except Exception as exc:
+        logging.error("Erro ao criar widget de entrada de filme: %s", str(exc))
         return None
 
 def on_movie_input_change(change):
@@ -124,9 +124,9 @@ def find_similar_movies(movie_id):
     except KeyError as ke:
         logging.error(
             "Erro ao encontrar filmes similares - KeyError: %s", str(ke))
-    except Exception as e:
+    except Exception as exc:
         logging.error(
-            "Erro desconhecido ao encontrar filmes similares: %s", str(e))
+            "Erro desconhecido ao encontrar filmes similares: %s", str(exc))
 
 def create_movie_name_input_widget(default_value='Toy Story'):
     """
@@ -138,9 +138,9 @@ def create_movie_name_input_widget(default_value='Toy Story'):
             description='Movie Title:',
             disabled=False
         )
-    except Exception as e:
+    except Exception as exc:
         logging.error(
-            "Erro ao criar widget de entrada de nome de filme: %s", str(e))
+            "Erro ao criar widget de entrada de nome de filme: %s", str(exc))
         return None
 
 def on_movie_name_input_change(change):
@@ -157,8 +157,8 @@ def on_movie_name_input_change(change):
                     display(find_similar_movies(movie_id))
     except ValueError as ve:
         logging.error("Erro na exibição de filmes recomendados: %s", str(ve))
-    except Exception as e:
-        logging.error("Erro desconhecido na exibição de filmes recomendados: %s", str(e))
+    except Exception as exc:
+        logging.error("Erro desconhecido na exibição de filmes recomendados: %s", str(exc))
 
 load_movies_data = load_data(
     "/workspaces/MLops2023/python_essentials_for_MLops/project1/ml-25m/movies.csv")
