@@ -34,3 +34,5 @@ Como referências temos o curso [Python Basics for Web Development](https://app.
 
 ## Certificados e vídeos
 [Certificado de Intermediate Python for Web Developer](https://app.dataquest.io/view_cert/P7NYCVX0HHHQF22V520Z)
+
+[Vídeo para referência](https://youtu.be/HSr6lt-F7gE)
