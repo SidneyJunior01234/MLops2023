@@ -15,4 +15,9 @@ Para que possamos aplicar todos esses conteúdos, devemos possuir o essencial em
 Após isso, podemos trabalhar com o tratamento dos dados assim como a reprodução de modelos, para que seja possível construir uma aplicação funcional.
 
 ## Projetos
+
+Para a primeira unidade do curso foram realizados trÊs projetos voltados aos conhecimentos necessários em python para que seja possível acompanhar e desenvolver bem os projetos que estão disponíveis em [python essentials for MLops](https://github.com/SidneyJunior01234/MLops2023/tree/main/python_essentials_for_MLops).
+
 ## Referências
+
+Todas as referências neessárias estão disponíveis no repositório do professor [Ivanovitch Medeiros](https://github.com/ivanovitchm).
