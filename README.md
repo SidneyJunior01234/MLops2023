@@ -20,4 +20,6 @@ Para a primeira unidade do curso foram realizados trÊs projetos voltados aos co
 
 ## Referências
 
-Todas as referências neessárias estão disponíveis no repositório do professor [Ivanovitch Medeiros](https://github.com/ivanovitchm).
+- [Repositório do professor Ivanovitch Medeiros](https://github.com/ivanovitchm)
+- [Dataquest](https://app.dataquest.io/)
+- [Documentação Python](https://docs.python.org/3/)
